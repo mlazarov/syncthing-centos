@@ -1,4 +1,4 @@
-# Syncthing for CentosOS
+# Syncthing for CentOS
 
 ## RPM Install
 
@@ -28,3 +28,11 @@ cd rpmbuild/SPECS/
 rpmbuild -bb syncthing.spec
 ```
 
+### Start  syncthing systemd service
+
+```
+sudo systemctl start syncthing@<username>
+```
+
+You can now access the GUI through this URL: 
+http://localhost:8080
