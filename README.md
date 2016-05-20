@@ -3,7 +3,7 @@
 ## RPM Install
 
 ```
-yum install https://github.com/mlazarov/syncthing-centos/releases/download/v0.12.18/syncthing-0.12.17-0.el7.centos.x86_64.rpm
+yum install https://github.com/mlazarov/syncthing-centos/releases/download/v0.13.1/syncthing-0.13.1-0.el7.centos.x86_64.rpm
 ```
 
 
