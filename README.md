@@ -23,7 +23,7 @@ git clone https://github.com/mlazarov/syncthing-centos.git rpmbuild/
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 cd ~/rpmbuild/SOURCES/
-wget https://github.com/syncthing/syncthing/releases/download/v0.14.7/syncthing-linux-amd64-v0.14.7.tar.gz
+spectool -g ../SPECS/syncthing.spec
 cd ~/rpmbuild/SPECS/
 rpmbuild -bb syncthing.spec
 ```
