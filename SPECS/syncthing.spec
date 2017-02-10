@@ -1,16 +1,15 @@
+%define debug_package %{nil}
 Name:		syncthing
 Version:	0.14.23
 Release:	0%{?dist}
 Summary:	Open, trustworthy and decentralized sync
-# Set to amd64 or 386
-%define arch	amd64
 
 Group:		Applications/System
 License:	MPLv2
 URL:		https://github.com/syncthing/syncthing
-Source0:	https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-linux-%{arch}-v%{version}.tar.gz
+Source0:	https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-source-v%{version}.tar.gz
 
-Requires:	policycoreutils-python
+BuildRequires:  git golang systemd
 
 %description
 Syncthing replaces proprietary sync and cloud services with something open,
@@ -19,29 +18,36 @@ to choose where it is stored, if it is shared with some third party and how
 it's transmitted over the Internet.
 
 %prep
-tar -zxf %{SOURCE0}
-cd syncthing-linux-%{arch}-v%{version}/
+%setup -q -n %{name}
+
+%build
+export GOPATH="$(pwd)"
+mkdir -p src/github.com/syncthing
+ln -s "$(pwd)" src/github.com/syncthing/syncthing
+cd src/github.com/syncthing/syncthing
+./build.sh noupgrade
 
 %install
-mkdir -p %{buildroot}/usr/bin/
-cd syncthing-linux-%{arch}-v%{version}/
-cp syncthing %{buildroot}/usr/bin/
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_unitdir}
+mkdir -p %{buildroot}%{_userunitdir}
 
-mkdir -p %{buildroot}/etc/systemd/system/
-cp etc/linux-systemd/system/syncthing\@.service  %{buildroot}/etc/systemd/system/
-cp etc/linux-systemd/system/syncthing-resume.service  %{buildroot}/etc/systemd/system/
-mkdir -p %{buildroot}/etc/systemd/user/
-cp etc/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
+cp syncthing %{buildroot}%{_bindir}
+cp etc/linux-systemd/system/syncthing\@.service  %{buildroot}%{_unitdir}
+cp etc/linux-systemd/system/syncthing-resume.service  %{buildroot}%{_unitdir}
+cp etc/linux-systemd/user/syncthing.service %{buildroot}%{_userunitdir}
 
 
 %files
-%defattr(-,root,root)
-/usr/bin/syncthing
-/etc/systemd/system/syncthing@.service
-/etc/systemd/system/syncthing-resume.service
-/etc/systemd/user/syncthing.service
+%{_bindir}/syncthing
+%{_unitdir}/syncthing@.service
+%{_unitdir}/syncthing-resume.service
+%{_userunitdir}/syncthing.service
 
 %changelog
+* Fri Feb 10 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+- Adapted from Javier Wilson spec file to build from source tarball
+
 * Thu Feb  9 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
 - Bump synthing version 0.14.7 -> 0.14.23
 
