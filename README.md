@@ -35,4 +35,4 @@ sudo systemctl start syncthing@<username>
 ```
 
 You can now access the GUI through this URL: 
-http://localhost:8080
+https://localhost:8384
