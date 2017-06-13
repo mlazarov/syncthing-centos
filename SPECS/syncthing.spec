@@ -1,13 +1,13 @@
 %define debug_package %{nil}
-Name:		syncthing
-Version:	0.14.30
-Release:	0%{?dist}
-Summary:	Open, trustworthy and decentralized sync
+Name:           syncthing
+Version:        0.14.30
+Release:        0%{?dist}
+Summary:        Open, trustworthy and decentralized sync
 
-Group:		Applications/System
-License:	MPLv2
-URL:		https://github.com/syncthing/syncthing
-Source0:	https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-source-v%{version}.tar.gz
+Group:          Applications/System
+License:        MPLv2
+URL:            https://github.com/syncthing/syncthing
+Source0:        https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-source-v%{version}.tar.gz
 
 BuildRequires:  git golang systemd
 
