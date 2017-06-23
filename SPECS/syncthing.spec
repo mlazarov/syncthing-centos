@@ -45,31 +45,31 @@ cp etc/linux-systemd/user/syncthing.service %{buildroot}%{_userunitdir}
 %{_userunitdir}/syncthing.service
 
 %changelog
-* Tue Jun 13 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Tue Jun 13 2017 daftaupe <daftaupe@protonmail.com>
 - Update to v0.14.30
 
-* Mon Jun 12 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Mon Jun 12 2017 daftaupe <daftaupe@protonmail.com>
 - Update to v0.14.29
 
-* Mon Jun 12 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Mon Jun 12 2017 daftaupe <daftaupe@protonmail.com>
 - Update to v0.14.28
 
-* Mon Jun 12 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Mon Jun 12 2017 daftaupe <daftaupe@protonmail.com>
 - Update to v0.14.27
 
-* Mon Jun 12 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Mon Jun 12 2017 daftaupe <daftaupe@protonmail.com>
 - Bump syncthing version 0.14.25 -> 0.14.26
 
-* Sun Mar 26 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Sun Mar 26 2017 daftaupe <daftaupe@protonmail.com>
 - Bump syncthing version 0.14.24 -> 0.14.25
 
-* Sun Mar 26 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Sun Mar 26 2017 daftaupe <daftaupe@protonmail.com>
 - Bump syncthing version 0.14.23 -> 0.14.24
 
-* Fri Feb 10 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Fri Feb 10 2017 daftaupe <daftaupe@protonmail.com>
 - Adapted from Javier Wilson spec file to build from source tarball
 
-* Thu Feb  9 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
+* Thu Feb  9 2017 daftaupe <daftaupe@protonmail.com>
 - Bump syncthing version 0.14.7 -> 0.14.23
 
 * Thu Sep 22 2016 Logan Owen <logan@s1network.com>
