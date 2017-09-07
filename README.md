@@ -16,6 +16,16 @@ yum install -y spectool git mock
 
 ### Setup build environment
 
+First we have to add the CentOS Plus repository to get a more recent version of golang.
+To do so add these lines right before the `"""` in /etc/mock/epel-7-x86_64.cfg
+```
+[centosplus]
+name=centosplus
+baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
+enabled=1
+
+```
+
 ```
 cd ~
 git clone https://github.com/daftaupe/syncthing-rpms.git
