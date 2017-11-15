@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 Name:           syncthing
-Version:        0.14.39
+Version:        0.14.40
 Release:        0%{?dist}
 Summary:        Open, trustworthy and decentralized sync
 
@@ -45,6 +45,9 @@ cp etc/linux-systemd/user/syncthing.service %{buildroot}%{_userunitdir}
 %{_userunitdir}/syncthing.service
 
 %changelog
+* Wed Nov 15 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com> 0.14.40
+- Update to v0.14.40
+
 * Thu Oct 12 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com> 0.14.39
 - Update to v0.14.39
 
